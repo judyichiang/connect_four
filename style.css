@@ -1,4 +1,21 @@
 tr, td, tbody {
   border: 1px solid #000;
-  width: 50px;
+  height: 100px;
+  width: 100px;
+}
+
+.red {
+  background-color: red;
+  border-radius: 50%;
+  height: 6rem;
+}
+
+.blue {
+  background-color: blue;
+  border-radius: 50%;
+  height: 6rem;
+}
+
+.hidden {
+  display: none;
 }
