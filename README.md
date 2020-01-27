@@ -18,6 +18,12 @@ For this hackathon, you and your team will be collaborating to build a Connect F
 - Allow players to choose an custom icon for their discs.
 - Allow players to choose the dimensions of the game rack before starting a game.
 
+### Groups
+
+<p align="middle">
+  <img src="images/groups.png">
+</p>
+
 ### Getting Started
 
 **One** team member should create a new project on [MeisterTask](https://meistertask.com/app) and invite the other team members to collaborate. This is where your team will conduct task management for the hackathon. MeisterTask cards should be small action items.
