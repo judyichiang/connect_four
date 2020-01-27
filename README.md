@@ -30,11 +30,11 @@ For this hackathon you will be collaborating with a small team of other develope
 2. Each member of your team should **clone** that **one** fork to their local `lfz/` directory. **💀 Do not fork the fork 💀**)
 3. Each member of your team should check out a new branch from the `master` branch for the changes that they are about to make. Do not work directly on the master branch!
 4. When a team member has completed their changes, they should push their branch up to GitHub and make a new Pull Request to merge their changes into `master`. If there are merge conflicts, do the following.
-  - Check out `master` locally.
-  - `git pull origin master` to make sure you have the latest commits for `master`
-  - Check out the branch you were working on.
-  - `git merge master` to make sure that your own branch is up-to-date
-  - Fix merge conflicts if there are any
+    - Check out `master` locally.
+    - `git pull origin master` to make sure you have the latest commits for `master`
+    - Check out the branch you were working on.
+    - `git merge master` to make sure that your own branch is up-to-date
+    - Fix merge conflicts if there are any
 5. Have a team member review and approve the Pull Request.
 6. Merge the pull request.
 7. Check out `master` locally.
