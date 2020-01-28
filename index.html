@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +17,10 @@
   </div>
   <main>
     <button id="startGame">Start Game</button>
+    <button id="resetGame">Reset Game</button>
+      <div id="gameInfo"></div>
+      <div id="p1Wins">Player 1 Number of Wins:</div>
+      <div id="p2Wins">Player 2 Number of Wins:</div>
     <div id="gameInfo"></div>
     <p>
       <audio controls loop id="theme">
@@ -26,15 +29,15 @@
       </audio>
     </p>
     <table>
-      <thead>
-        <th><button class="col-0">Click to Drop</button></th>
-        <th><button class="col-1">Click to Drop</button></th>
-        <th><button class="col-2">Click to Drop</button></th>
-        <th><button class="col-3">Click to Drop</button></th>
-        <th><button class="col-4">Click to Drop</button></th>
-        <th><button class="col-5">Click to Drop</button></th>
-        <th><button class="col-6">Click to Drop</button></th>
-      </thead>
+     <thead>
+          <th class="col-0"></th>
+          <th class="col-1"></th>
+          <th class="col-2"></th>
+          <th class="col-3"></th>
+          <th class="col-4"></th>
+          <th class="col-5"></th>
+          <th class="col-6"></th>
+        </thead>
       <tbody>
         <!--Row #1-->
         <tr>
@@ -98,6 +101,13 @@
         </tr>
       </tbody>
     </table>
+     <div class="modal hidden">
+        <div class="modal-text">
+          <span class="close">&times;</span>
+          <button class="restart">Play Again</button>
+          <div class="congrats"></div>
+        </div>
+      </div>
   </main>
   <script src="script.js"></script>
 </body>
