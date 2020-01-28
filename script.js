@@ -6,14 +6,17 @@ const button5 = document.querySelector('.col-5');
 const button6 = document.querySelector('.col-6');
 const button7 = document.querySelector('.col-7');
 
-var player1 = 'odd';
-var player2 = 'even';
-var player1Color = 'red';
-var player2Color = 'blue';
-var counter = 1;
-var turnNumber = 1;
 
-button1.addEventListener('click', function() {
+var currentPlayer = 'red'
+// var player1 = 'odd';
+// var player2 = 'even';
+// var player1Color = 'red';
+// var player2Color = 'blue';
+// var turnNumber = 1;
+var counter = 1;
+
+
+button1.addEventListener('click', function () {
   // get player's class color name
   // need to check the column for existing discs below
   // remove the 'hidden' class for the disc above the top-most disc
@@ -22,6 +25,18 @@ button1.addEventListener('click', function() {
   var A1 = document.getElementById('A1');
   A1.firstElementChild.classList.remove('hidden');
 
-
-
 })
+
+// --------------- player-color function ---------------
+
+// var red = document.querySelector('.red');
+// var blue = document.querySelector('.blue');
+
+function player(){
+  if(currentPlayer === 'red'){
+    currentPlayer = 'blue';
+  }
+  if(currentPlayer === 'blue'){
+    currentPlayer = 'red'
+  }
+}
