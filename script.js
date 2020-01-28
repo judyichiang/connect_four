@@ -29,8 +29,8 @@ button1.addEventListener('click', function () {
 
 // --------------- player-color function ---------------
 
-var red = document.querySelector('.red');
-var blue = document.querySelector('.blue');
+// var red = document.querySelector('.red');
+// var blue = document.querySelector('.blue');
 
 function player(){
   if(currentPlayer === 'red'){
