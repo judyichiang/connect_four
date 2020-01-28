@@ -1,5 +1,5 @@
 body {
-  max-width: 50%;
+  max-width: 700px;
   margin: auto;
   text-align: center;
   background-image: url(images/pablo-garcia-saldana-6WysHvxpQEQ-unsplash.jpg);
@@ -30,9 +30,43 @@ tr, td, tbody {
 }
 
 .player1 {
-  background-color: red;
+  background-color: rgb(66, 151, 62);
 }
 
 .player2 {
-  background-color: blue;
+  background-color: rgb(224,233,66);
+}
+
+.theme-title {
+  display: flex;
+  height: 120px;
+  justify-content: center;
+}
+
+.theme-title p {
+  color: whitesmoke;
+  font-size: 3rem;
+  margin-top: 2.5rem;
+}
+
+.title-1 {
+  background-image: url(images/co.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90px;
+  width: 100px;
+  margin: 1rem;
+  margin-right: .3rem;
+}
+
+.title-2 {
+  background-image: url(images/F.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90px;
+  width: 100px;
+  margin: 1rem;
+  margin-right: .3rem;
 }
