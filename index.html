@@ -11,19 +11,22 @@
     <h1>Welcome to Connect 4</h1>
     <main>
       <button id="startGame">Start Game</button>
+      <button id="resetGame">Reset Game</button>
       <div id="gameInfo"></div>
+      <div id="p1Wins">Player 1 Number of Wins:</div>
+      <div id="p2Wins">Player 2 Number of Wins:</div>
       <table>
         <thead>
-          <th><button class="col-0">Click to Drop</button></th>
-          <th><button class="col-1">Click to Drop</button></th>
-          <th><button class="col-2">Click to Drop</button></th>
-          <th><button class="col-3">Click to Drop</button></th>
-          <th><button class="col-4">Click to Drop</button></th>
-          <th><button class="col-5">Click to Drop</button></th>
-          <th><button class="col-6">Click to Drop</button></th>
+          <th class="col-0"></th>
+          <th class="col-1"></th>
+          <th class="col-2"></th>
+          <th class="col-3"></th>
+          <th class="col-4"></th>
+          <th class="col-5"></th>
+          <th class="col-6"></th>
         </thead>
         <tbody>
-          <!--Row #1-->
+          <!--Row #0-->
           <tr>
             <td id="td00"></td>
             <td id="td01"></td>
@@ -33,7 +36,7 @@
             <td id="td05"></td>
             <td id="td06"></td>
           </tr>
-          <!--Row #2-->
+          <!--Row #1-->
           <tr>
             <td id="td10"></td>
             <td id="td11"></td>
@@ -43,7 +46,7 @@
             <td id="td15"></td>
             <td id="td16"></td>
           </tr>
-          <!--Row #3-->
+          <!--Row #2-->
           <tr>
             <td id="td20"></td>
             <td id="td21"></td>
@@ -53,7 +56,7 @@
             <td id="td25"></td>
             <td id="td26"></td>
           </tr>
-          <!--Row #4-->
+          <!--Row #3-->
           <tr>
             <td id="td30"></td>
             <td id="td31"></td>
@@ -63,7 +66,7 @@
             <td id="td35"></td>
             <td id="td36"></td>
           </tr>
-          <!--Row #5-->
+          <!--Row #4-->
           <tr>
             <td id="td40"></td>
             <td id="td41"></td>
@@ -73,7 +76,7 @@
             <td id="td45"></td>
             <td id="td46"></td>
           </tr>
-          <!--Row #6-->
+          <!--Row #5-->
           <tr>
             <td id="td50"></td>
             <td id="td51"></td>
@@ -85,6 +88,13 @@
           </tr>
         </tbody>
       </table>
+      <div class="modal hidden">
+        <div class="modal-text">
+          <span class="close">&times;</span>
+          <button class="restart">Play Again</button>
+          <div class="congrats"></div>
+        </div>
+      </div>
     </main>
     <script src="script.js"></script>
   </body>

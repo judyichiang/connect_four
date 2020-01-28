@@ -1,5 +1,10 @@
+body {
+  font-family: sans-serif;
+}
+
 tr, td, tbody {
   border: 1px solid #000;
+  border-radius: 50%;
   height: 100px;
   width: 100px;
 }
@@ -12,12 +17,216 @@ tr, td, tbody {
   display: block;
 }
 
-.player1 {
-  background-color: red;
+th:hover {
+  background-image: url('images/arrow.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
+.player1 {
+  background-color: crimson;
 }
 
 .player2 {
-  background-color: blue;
+  background-color: dodgerblue;
+}
 
+#startGame {
+  height: 25px;
+  width: 100px;
+  border-radius: 10px;
+  border: none;
+  background-color: dodgerblue;
+  color: white;
+}
+
+#startGame:hover {
+  cursor: pointer;
+  background-color: blue;
+}
+
+#startGame:active {
+  transform: translateY(5px);
+}
+
+#startGame:disabled {
+  color: grey;
+  cursor: initial;
+}
+
+#startGame:disabled:hover {
+  background-color: dodgerblue;
+  cursor: initial;
+}
+
+#resetGame {
+  height: 25px;
+  width: 100px;
+  border-radius: 10px;
+  border: none;
+  background-color: crimson;
+  color: white;
+}
+
+#resetGame:hover {
+  cursor: pointer;
+  background-color: darkred;
+}
+
+#resetGame:active {
+  transform: translateY(5px);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  width: 800px;
+  background-color:black;
+  background-image:
+  radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+  radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+  radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+  radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+  color: white;
+  border-radius: 25px;
+}
+
+.modal-text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-text > div {
+  text-align: center;
+  font-size: 3rem;
+  position: relative;
+  top: 50px;
+}
+
+.close {
+  font-size: 5rem;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.close:hover {
+  cursor: pointer;
+  color: #aaa;
+}
+
+.close:active {
+  transform: translateY(5px);
+}
+
+.restart {
+  height: 25px;
+  width: 100px;
+  border-radius: 10px;
+  border: none;
+  background-color: dodgerblue;
+  color: white;
+}
+
+.restart:hover {
+  cursor: pointer;
+  background-color: blue;
+}
+
+.restart:active {
+  transform: translateY(5px);
+}
+
+.fall-5 {
+  animation-name: fall-animation-5;
+  animation-duration: 500ms;
+ }
+
+.fall-4 {
+  animation-name: fall-animation-4;
+  animation-duration: 500ms;
+}
+
+.fall-3 {
+  animation-name: fall-animation-3;
+  animation-duration: 500ms;
+}
+
+.fall-2 {
+  animation-name: fall-animation-2;
+  animation-duration: 500ms;
+}
+
+.fall-1 {
+  animation-name: fall-animation-1;
+  animation-duration: 500ms;
+}
+
+.fall-0 {
+  animation-name: fall-animation-0;
+  animation-duration: 500ms;
+}
+
+@keyframes fall-animation-5 {
+  from {
+    transform: translateY(-500px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fall-animation-4 {
+  from {
+    transform: translateY(-400px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fall-animation-3 {
+  from {
+    transform: translateY(-300px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fall-animation-2 {
+  from {
+    transform: translateY(-200px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fall-animation-1 {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fall-animation-0 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  display: none;
 }
