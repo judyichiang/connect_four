@@ -6,7 +6,12 @@ const button5 = document.querySelector('.col-5');
 const button6 = document.querySelector('.col-6');
 const button7 = document.querySelector('.col-7');
 
-
+var player1 = 'odd';
+var player2 = 'even';
+var player1Color = 'red';
+var player2Color = 'blue';
+var counter = 1;
+var turnNumber = 1;
 
 button1.addEventListener('click', function() {
   // get player's class color name
