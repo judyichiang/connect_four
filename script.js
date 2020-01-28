@@ -12,8 +12,8 @@ var gameActive = false;
 var activePlayer = 1;
 var gameBoard = [];
 var playerColor = [];
-playerColor[1] = "red";
-playerColor[2] = "blue";
+playerColor[1] = "green";
+playerColor[2] = "yellow";
 var col, row;
 
 button0.addEventListener('click', function() {
