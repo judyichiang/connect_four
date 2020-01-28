@@ -8,12 +8,16 @@ const button7 = document.querySelector('.col-7');
 
 
 var currentPlayer = 'red'
-// var player1 = 'odd';
-// var player2 = 'even';
-// var player1Color = 'red';
-// var player2Color = 'blue';
-// var turnNumber = 1;
 var counter = 1;
+
+var board = [
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0]
+]
 
 
 button1.addEventListener('click', function () {
@@ -29,14 +33,11 @@ button1.addEventListener('click', function () {
 
 // --------------- player-color function ---------------
 
-// var red = document.querySelector('.red');
-// var blue = document.querySelector('.blue');
-
-function player(){
-  if(currentPlayer === 'red'){
+function player() {
+  if (currentPlayer === 'red') {
     currentPlayer = 'blue';
   }
-  if(currentPlayer === 'blue'){
+  if (currentPlayer === 'blue') {
     currentPlayer = 'red'
   }
 }
