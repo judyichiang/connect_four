@@ -11,6 +11,10 @@ h1 {
   color: whitesmoke;
 }
 
+table {
+  margin: auto;
+}
+
 tr, td, tbody {
   border: 1px solid #000;
   height: 100px;
