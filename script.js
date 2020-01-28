@@ -7,6 +7,7 @@ const button5 = document.querySelector('.col-5');
 const button6 = document.querySelector('.col-6');
 const gameInfo = document.getElementById('gameInfo');
 const start = document.getElementById('startGame');
+const playTheme = document.getElementById('theme');
 
 var gameActive = false;
 var activePlayer = 1;
@@ -57,7 +58,9 @@ function startGame() {
   }
   updateBoard();
   updateTurn();
+  playAudio();
 }
+
 
 function updateBoard() {
   checkWin();
@@ -72,6 +75,10 @@ function updateTurn() {
   if (gameActive) {
     gameInfo.innerHTML = "Current Player: Player " + activePlayer + " <span class='player" + activePlayer + "'>(" + playerColor[activePlayer] + ")</span>";
   }
+}
+
+function playAudio() {
+  playTheme.play();
 }
 
 function checkWin() {
