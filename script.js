@@ -14,13 +14,14 @@ const congrats = document.querySelector('.congrats');
 const reset = document.getElementById('resetGame');
 const p1Wins = document.getElementById('p1Wins');
 const p2Wins = document.getElementById('p2Wins');
+const playTheme = document.getElementById('theme');
 
 var gameActive = false;
 var activePlayer = 1;
 var gameBoard = [];
 var playerColor = [];
-playerColor[1] = "red";
-playerColor[2] = "blue";
+playerColor[1] = "green";
+playerColor[2] = "yellow";
 var col, row;
 var p1GamesWon = 0;
 var p2GamesWon = 0;
@@ -105,7 +106,10 @@ function resetGame() {
       document.getElementById('td' + row + col).innerHTML = "<span class='tdElement player" + gameBoard[row][col] + "'> </span>";
     }
   }
+  updateTurn();
+  playAudio();
 }
+
 
 function updateBoard() {
   checkWin();
@@ -124,6 +128,10 @@ function updateTurn() {
   if (gameActive) {
     gameInfo.innerHTML = "Current Player: Player " + activePlayer + " <span class='player" + activePlayer + "'>(" + playerColor[activePlayer] + ")</span>";
   }
+}
+
+function playAudio() {
+  playTheme.play();
 }
 
 function checkWin() {
