@@ -127,7 +127,7 @@ function updateTurn() {
   p1Wins.textContent = p1WinsInfo;
   p2Wins.textContent = p2WinsInfo;
   if (gameActive) {
-    gameInfo.innerHTML = "Current Player: Player " + activePlayer + " <span class='player" + activePlayer + "'>(" + playerColor[activePlayer] + ")</span>";
+    gameInfo.innerHTML = "Current Player: Player " + activePlayer + " <span class='player0" + activePlayer + "'>(" + playerColor[activePlayer] + ")</span>";
   }
 }
 

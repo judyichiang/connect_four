@@ -266,6 +266,16 @@ th:hover {
   background-position: center;
 }
 
+/* -------------- */
+
+.player01 {
+  background-color: rgb(66, 151, 62);
+}
+
+.player02 {
+  background-color: rgb(224, 233, 66);
+}
+
 .theme-title {
   display: flex;
   height: 120px;
