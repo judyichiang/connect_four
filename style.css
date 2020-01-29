@@ -38,7 +38,7 @@ th:hover {
 
 #startGame {
   font-size: 1rem;
-  height:35px;
+  height: 35px;
   width: 100px;
   border-radius: 20px;
   border: none;
@@ -61,7 +61,7 @@ th:hover {
 }
 
 #startGame:disabled:hover {
-  background-color: rgb(60, 103, 58));
+  background-color: rgb(60, 103, 58);
   cursor: initial;
 }
 
@@ -371,11 +371,6 @@ aside {
   font-family: sans-serif;
   font-size: 1.2rem;
   line-height: 2rem;
-}
-
-
-aside p {
-
 }
 
 .hidden {

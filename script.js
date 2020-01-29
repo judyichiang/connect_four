@@ -140,7 +140,7 @@ function updateBoard() {
   checkWin();
   for (col = 0; col <= 6; col++) {
     for (row = 0; row <= 5; row++) {
-      document.getElementById('td' + row + col).innerHTML = "<span class='tdElement "+ playerDisc+" player" + gameBoard[row][col] + "'> </span>";
+      document.getElementById('td' + row + col).innerHTML = "<span class='tdElement " + playerDisc + " player" + gameBoard[row][col] + "'> </span>";
       //+="class"
     }
   }
@@ -258,14 +258,20 @@ function endGame(winner) {
 
 function drop(col) {
   for (row = 5; row >= 0; row--) {
-    if (gameBoard[row][col] === 0) {
-      gameBoard[row][col] = activePlayer;
-      var disc = document.getElementById('td' + row + col);
-      disc.classList.add('fall-' + row);
-      updateBoard();
-      activePlayer = (activePlayer === 1) ? 2 : 1;
-      updateTurn();
-      return true;
+    try {
+      if (gameBoard[row][col] === 0) {
+        gameBoard[row][col] = activePlayer;
+        var disc = document.getElementById('td' + row + col);
+        disc.classList.add('fall-' + row);
+        disc.classList.add('icon-5');
+        updateBoard();
+        activePlayer = (activePlayer === 1) ? 2 : 1;
+        updateTurn();
+        return true;
+      }
+    }
+    catch (err) {
+      console.log(err.message);
     }
   }
 }
