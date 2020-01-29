@@ -251,11 +251,19 @@ th:hover {
 }
 
 .player1 {
+  background-image: url('images/money.png');
   background-color: rgb(66, 151, 62);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .player2 {
+  background-image: url('images/beaker.png');
   background-color: rgb(224, 233, 66);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .theme-title {
