@@ -263,7 +263,6 @@ function drop(col) {
         gameBoard[row][col] = activePlayer;
         var disc = document.getElementById('td' + row + col);
         disc.classList.add('fall-' + row);
-        disc.classList.add('icon-5');
         updateBoard();
         activePlayer = (activePlayer === 1) ? 2 : 1;
         updateTurn();

@@ -39,7 +39,7 @@ th:hover {
 #startGame {
   font-size: 1rem;
   height: 35px;
-  width: 100px;
+  width: 125px;
   border-radius: 20px;
   border: none;
   background-color: rgb(60, 103, 58);
@@ -68,7 +68,7 @@ th:hover {
 #resetGame {
   font-size: 1rem;
   height: 35px;
-  width: 100px;
+  width: 125px;
   border-radius: 20px;
   border: none;
   background-color: rgb(224, 233, 66);
