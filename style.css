@@ -331,23 +331,38 @@ main {
 }
 
 .icon-1 {
-  background-image: url(images/beaker.png);
+  background-image: url('images/beaker.png');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .icon-2 {
-  background-image: url(images/icons8-camper-80.png);
+  background-image: url('images/icons8-camper-80.png');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .icon-3 {
-  background-image: url(images/icons8-hat-80.png);
+  background-image: url('images/icons8-hat-80.png');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .icon-4 {
-  background-image: url(images/icons8-skull-crossbones-100.png);
+  background-image: url('images/icons8-skull-crossbones-100.png');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .icon-5 {
-  background-image: url(images/money.png);
+  background-image: url('images/money.png');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 aside {
