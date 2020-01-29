@@ -27,6 +27,52 @@ var col, row;
 var p1GamesWon = 0;
 var p2GamesWon = 0;
 
+var disc1 = document.querySelector('disc-1');
+var disc2 = document.querySelector('disc-2');
+var disc3 = document.querySelector('disc-3');
+var disc4 = document.querySelector('disc-4');
+var disc5 = document.querySelector('disc-5');
+
+var playerDisc1;
+var playerDisc2;
+
+disc1.addEventListener('click', function () {
+  if (player1) {
+    playerDisc1 = 'disc-1'
+  } else {
+    playerDisc2 = 'disc-1'
+  }
+})
+disc2.addEventListener('click', function () {
+  if (player1) {
+    playerDisc1 = 'disc-2'
+  } else {
+    playerDisc2 = 'disc-2'
+  }
+})
+disc3.addEventListener('click', function () {
+  if (player1) {
+    playerDisc1 = 'disc-3'
+  } else {
+    playerDisc2 = 'disc-3'
+  }
+})
+disc4.addEventListener('click', function () {
+  if (player1) {
+    playerDisc1 = 'disc-4'
+  } else {
+    playerDisc2 = 'disc-4'
+  }
+})
+disc5.addEventListener('click', function () {
+  if (player1) {
+    playerDisc1 = 'disc-5'
+  } else {
+    playerDisc2 = 'disc-5'
+  }
+})
+
+
 button0.addEventListener('click', function () {
   drop(0);
 });
@@ -48,6 +94,14 @@ button5.addEventListener('click', function () {
 button6.addEventListener('click', function () {
   drop(6);
 });
+
+
+
+
+
+
+
+
 start.addEventListener('click', startGame);
 close.addEventListener('click', function () {
   modal.classList.add('hidden');
@@ -111,6 +165,7 @@ function resetGame() {
   updateTurn();
 }
 
+// --------------updated board add disc--------------
 
 function updateBoard() {
   checkWin();
@@ -139,7 +194,7 @@ mute.addEventListener('click', function () {
   if (playTheme.muted === false) {
     playTheme.muted = true;
   }
-  else{
+  else {
     playTheme.muted = false;
   }
 });

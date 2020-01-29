@@ -250,20 +250,34 @@ th:hover {
   display: none;
 }
 
-.player1 {
+.disc-1 {
   background-image: url('images/money.png');
-  background-color: rgb(66, 151, 62);
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.player2 {
+.disc-2 {
   background-image: url('images/beaker.png');
-  background-color: rgb(224, 233, 66);
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.disc-3 {}
+
+.disc-4 {}
+
+.disc-5 {}
+
+.player1 {
+  /* background-image: url('images/money.png'); */
+  background-color: rgb(66, 151, 62);
+}
+
+.player2 {
+  /* background-image: url('images/beaker.png'); */
+  background-color: rgb(224, 233, 66);
 }
 
 .theme-title {
