@@ -58,6 +58,36 @@ restart.addEventListener('click', function () {
 })
 reset.addEventListener('click', resetGame);
 
+const icon1 = document.querySelector('icon-1');
+const icon2 = document.querySelector('icon-2');
+const icon3 = document.querySelector('icon-3');
+const icon4 = document.querySelector('icon-4');
+const icon5 = document.querySelector('icon-5');
+
+var playerDisc = null;
+
+icon1.addEventListener('click', function () {
+  playerDisc = "icon-1";
+
+});
+
+icon2.addEventListener('click', function () {
+  playerDisc = "icon-2";
+
+});
+icon3.addEventListener('click', function () {
+  playerDisc = "icon-3";
+
+});
+icon4.addEventListener('click', function () {
+  playerDisc = "icon-4";
+
+});
+icon5.addEventListener('click', function () {
+  playerDisc = "icon-5";
+
+});
+
 function startGame() {
   if (gameActive === true) {
     return false;
@@ -116,7 +146,8 @@ function updateBoard() {
   checkWin();
   for (col = 0; col <= 6; col++) {
     for (row = 0; row <= 5; row++) {
-      document.getElementById('td' + row + col).innerHTML = "<span class='tdElement player" + gameBoard[row][col] + "'> </span>";
+      document.getElementById('td' + row + col).innerHTML = "<span class='tdElement " + playerDisc + " player" + gameBoard[row][col] + "'> </span>";
+      //+="class"
     }
   }
 }
@@ -139,7 +170,7 @@ mute.addEventListener('click', function () {
   if (playTheme.muted === false) {
     playTheme.muted = true;
   }
-  else{
+  else {
     playTheme.muted = false;
   }
 });
