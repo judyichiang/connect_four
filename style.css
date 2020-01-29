@@ -246,24 +246,20 @@ th:hover {
   }
 }
 
-.hidden {
-  display: none;
-}
-
 .player1 {
-  background-image: url('images/money.png');
   background-color: rgb(66, 151, 62);
+  /* background-image: url('images/money.png');
   background-size: 80%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center; */
 }
 
 .player2 {
-  background-image: url('images/beaker.png');
   background-color: rgb(224, 233, 66);
+  /* background-image: url('images/beaker.png');
   background-size: 80%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center; */
 }
 
 /* -------------- */
@@ -331,25 +327,32 @@ main {
   background-size: 5rem;
   border-radius: 50%;
   background-color: rgba(136, 194, 88, 0.842)
-
 }
 
 .icon-1 {
   background-image: url(images/beaker.png);
 }
+
 .icon-2 {
   background-image: url(images/icons8-camper-80.png);
 }
+
 .icon-3 {
   background-image: url(images/icons8-hat-80.png);
 }
+
 .icon-4 {
   background-image: url(images/icons8-skull-crossbones-100.png);
 }
+
 .icon-5 {
   background-image: url(images/money.png);
 }
 
 aside {
   font-family: sans-serif;
+}
+
+.hidden {
+  display: none;
 }
