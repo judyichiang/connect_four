@@ -14,20 +14,25 @@
     <p>nnect</p>
     <div class="title-2"></div>
     <p>our</p>
-  </div>
+  </div><button id="startGame">Start Game</button>
+  <button id="resetGame">Reset Game</button>
+  <button id="music">&#128361;</button>
   <main>
-    <button id="startGame">Start Game</button>
-    <button id="resetGame">Reset Game</button>
-    <button id="music">&#128361;</button>
+    <aside class="game-stats">
       <div id="gameInfo"></div>
       <div id="p1Wins">Player 1 Number of Wins:</div>
       <div id="p2Wins">Player 2 Number of Wins:</div>
-    <p>
+      <p>Choose Your Token:</p>
+      <div class="choose-token icon-1"></div>
+      <div class="choose-token icon-2"></div>
+      <div class="choose-token icon-3"></div>
+      <div class="choose-token icon-4"></div>
+      <div class="choose-token icon-5"></div>
+    </aside>
       <audio loop id="theme">
         <source src="audio/Breaking Bad Theme.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
-    </p>
     <table>
      <thead>
           <th class="col-0"></th>
