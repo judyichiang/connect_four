@@ -102,6 +102,10 @@ th:hover {
   transform: translateY(5px);
 }
 
+#p1Wins, #p2Wins {
+  font-style: italic;
+}
+
 .modal {
   position: fixed;
   top: 50%;
@@ -363,6 +367,18 @@ main {
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+#token1, #token2 {
+  color: black;
+}
+
+.choose-token:hover {
+  background-color: darkolivegreen;
+}
+
+.choose-token:active {
+  transform: translateY(5px);
 }
 
 aside {
