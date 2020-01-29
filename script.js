@@ -1,3 +1,4 @@
+// ELEMENT DEFINITIONS
 const button0 = document.querySelector('.col-0');
 const button1 = document.querySelector('.col-1');
 const button2 = document.querySelector('.col-2');
@@ -16,17 +17,27 @@ const p1Wins = document.getElementById('p1Wins');
 const p2Wins = document.getElementById('p2Wins');
 const playTheme = document.getElementById('theme');
 const mute = document.getElementById('music');
+const icon1 = document.querySelector('.icon-1');
+const icon2 = document.querySelector('.icon-2');
+const icon3 = document.querySelector('.icon-3');
+const icon4 = document.querySelector('.icon-4');
+const icon5 = document.querySelector('.icon-5');
 
+// VARIABLE DECLARATIONS
+var col, row;
+
+// VARIABLE DECLARATIONS AND INITIALIZATIONS
 var gameActive = false;
 var activePlayer = 1;
 var gameBoard = [];
 var playerColor = [];
-playerColor[1] = "green";
-playerColor[2] = "yellow";
-var col, row;
 var p1GamesWon = 0;
 var p2GamesWon = 0;
+var playerDisc = null;
+playerColor[1] = "green";
+playerColor[2] = "yellow";
 
+// EVENT HANDLERS
 button0.addEventListener('click', function () {
   drop(0);
 });
@@ -57,15 +68,6 @@ restart.addEventListener('click', function () {
   startGame();
 })
 reset.addEventListener('click', resetGame);
-
-const icon1 = document.querySelector('.icon-1');
-const icon2 = document.querySelector('.icon-2');
-const icon3 = document.querySelector('.icon-3');
-const icon4 = document.querySelector('.icon-4');
-const icon5 = document.querySelector('.icon-5');
-
-var playerDisc = null;
-
 icon1.addEventListener('click', function () {
   playerDisc = "icon-1";
 });
@@ -81,7 +83,16 @@ icon4.addEventListener('click', function () {
 icon5.addEventListener('click', function () {
   playerDisc = "icon-5";
 });
+mute.addEventListener('click', function () {
+  if (playTheme.muted === false) {
+    playTheme.muted = true;
+  }
+  else {
+    playTheme.muted = false;
+  }
+});
 
+// FUNCTIONS
 function startGame() {
   if (gameActive === true) {
     return false;
@@ -135,7 +146,6 @@ function resetGame() {
   updateTurn();
 }
 
-
 function updateBoard() {
   checkWin();
   for (col = 0; col <= 6; col++) {
@@ -159,16 +169,6 @@ function updateTurn() {
 function playAudio() {
   playTheme.play();
 }
-
-mute.addEventListener('click', function () {
-  if (playTheme.muted === false) {
-    playTheme.muted = true;
-  }
-  else {
-    playTheme.muted = false;
-  }
-});
-
 
 function checkWin() {
   // Check left to right

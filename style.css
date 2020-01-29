@@ -2,7 +2,7 @@ body {
   max-width: 1250px;
   margin: auto;
   text-align: center;
-  background-image: url(images/pablo-garcia-saldana-6WysHvxpQEQ-unsplash.jpg);
+  background-image: url('images/pablo-garcia-saldana-6WysHvxpQEQ-unsplash.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -22,6 +22,10 @@ tr, td, tbody {
   width: 100px;
 }
 
+#gameInfo {
+  font-size: 1.75rem;
+}
+
 .tdElement {
   height: 100px;
   width: 100px;
@@ -38,6 +42,7 @@ th:hover {
 
 #startGame {
   font-size: 1rem;
+  font-weight: bold;
   height: 35px;
   width: 125px;
   border-radius: 20px;
@@ -270,14 +275,6 @@ th:hover {
 
 /* -------------- */
 
-.player01 {
-  background-color: rgb(66, 151, 62);
-}
-
-.player02 {
-  background-color: rgb(224, 233, 66);
-}
-
 .theme-title {
   display: flex;
   height: 120px;
@@ -291,7 +288,7 @@ th:hover {
 }
 
 .title-1 {
-  background-image: url(images/co.png);
+  background-image: url('images/co.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -302,7 +299,7 @@ th:hover {
 }
 
 .title-2 {
-  background-image: url(images/F.png);
+  background-image: url('images/F.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -371,22 +368,24 @@ main {
 
 #token1, #token2 {
   color: black;
+  font-weight: bold;
 }
 
 .choose-token:hover {
   background-color: darkolivegreen;
+  cursor: pointer;
 }
 
 .choose-token:active {
   transform: translateY(5px);
 }
 
-aside {
+#p1Wins, #p2Wins {
   margin-top: 2rem;
   color: whitesmoke;
   font-family: sans-serif;
   font-size: 1.2rem;
-  line-height: 2rem;
+  line-height: 0.5rem;
 }
 
 .hidden {
