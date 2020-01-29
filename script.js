@@ -71,9 +71,9 @@ function startGame() {
     }
   }
   gameInfo.innerHTML = '';
-  for (var i = 0; i < 7; i++) {
-    document.querySelector('.col-' + i).classList.remove('hidden');
-  }
+  // for (var i = 0; i < 7; i++) {
+  //   document.querySelector('.col-' + i).classList.remove('hidden');
+  // }
   for (row = 0; row <= 5; row++) {
     for (col = 0; col <= 6; col++) {
       var initDisc = document.getElementById('td' + row + col);
@@ -223,9 +223,9 @@ function checkWin() {
 function endGame(winner) {
   gameActive = false;
   gameInfo.textContent = "Winner: " + winner;
-  for (var i = 0; i < 7; i++) {
-    document.querySelector('.col-' + i).classList.add('hidden');
-  }
+  // for (var i = 0; i < 7; i++) {
+  //   document.querySelector('.col-' + i).classList.add('hidden');
+  // }
   start.removeAttribute('disabled');
   modal.classList.remove('hidden');
   congrats.textContent = "Congratulations player " + activePlayer + ", you have won!";
