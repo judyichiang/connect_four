@@ -41,13 +41,13 @@ th:hover {
   width: 100px;
   border-radius: 10px;
   border: none;
-  background-color: dodgerblue;
-  color: white;
+  background-color: rgb(60, 103, 58);
+  color: rgb(224, 233, 66);
 }
 
 #startGame:hover {
   cursor: pointer;
-  background-color: blue;
+  background-color: rgb(36, 58, 35);
 }
 
 #startGame:active {
@@ -60,7 +60,7 @@ th:hover {
 }
 
 #startGame:disabled:hover {
-  background-color: dodgerblue;
+  background-color: rgb(60, 103, 58));
   cursor: initial;
 }
 
@@ -69,16 +69,34 @@ th:hover {
   width: 100px;
   border-radius: 10px;
   border: none;
-  background-color: crimson;
-  color: white;
+  background-color: rgb(224, 233, 66);
+  color: rgb(60, 103, 58);
 }
 
 #resetGame:hover {
   cursor: pointer;
-  background-color: darkred;
+  background-color: rgb(126, 131, 35);
 }
 
 #resetGame:active {
+  transform: translateY(5px);
+}
+
+#music {
+  height: 25px;
+  width: 30px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(6, 94, 54);
+  color: white;
+}
+
+#music:hover {
+  cursor: pointer;
+  background-color: rgb(188, 194, 191);
+}
+
+#music:active {
   transform: translateY(5px);
 }
 
@@ -89,12 +107,8 @@ th:hover {
   transform: translate(-50%, -50%);
   height: 400px;
   width: 800px;
-  background-color:black;
-  background-image:
-  radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-  radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-  radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
-  radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+  background-color: black;
+  background-image: radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px), radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px), radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px), radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px);
   background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
   background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
   color: white;
@@ -108,7 +122,7 @@ th:hover {
   align-items: center;
 }
 
-.modal-text > div {
+.modal-text>div {
   text-align: center;
   font-size: 3rem;
   position: relative;
@@ -151,7 +165,7 @@ th:hover {
 .fall-5 {
   animation-name: fall-animation-5;
   animation-duration: 500ms;
- }
+}
 
 .fall-4 {
   animation-name: fall-animation-4;
@@ -241,7 +255,7 @@ th:hover {
 }
 
 .player2 {
-  background-color: rgb(224,233,66);
+  background-color: rgb(224, 233, 66);
 }
 
 .theme-title {
