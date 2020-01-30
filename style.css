@@ -1,6 +1,6 @@
 body {
   max-width: 1250px;
-  margin: auto;
+  margin: 0;
   text-align: center;
   background-image: url('images/pablo-garcia-saldana-6WysHvxpQEQ-unsplash.jpg');
   background-size: cover;
@@ -113,17 +113,12 @@ th:hover {
 
 .modal, .modal-draw {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 400px;
-  width: 800px;
-  background-color: black;
-  background-image: radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px), radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px), radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px), radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px);
-  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
-  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-  color: white;
-  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(27, 29, 25, 0.637)
 }
 
 .modal-text {
@@ -131,6 +126,7 @@ th:hover {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  color: white;
 }
 
 .modal-text>div {
@@ -155,7 +151,7 @@ th:hover {
   transform: translateY(5px);
 }
 
-.restart {
+.restart, .restart-draw {
   height: 25px;
   width: 100px;
   border-radius: 10px;
@@ -372,7 +368,7 @@ main {
 }
 
 .choose-token:hover {
-  background-color: darkolivegreen;
+  background-color: rgb(7, 7, 7);
   cursor: pointer;
 }
 
@@ -386,6 +382,11 @@ main {
   font-family: sans-serif;
   font-size: 1.2rem;
   line-height: 0.5rem;
+}
+
+aside {
+  margin: 1.5rem;
+  margin-right: 0;
 }
 
 .hidden {

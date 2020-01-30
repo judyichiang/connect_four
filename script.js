@@ -12,6 +12,7 @@ var modal = document.querySelector('.modal');
 var modalDraw = document.querySelector('.modal-draw');
 var close = document.querySelector('.close');
 var restart = document.querySelector('.restart');
+var restartDraw = document.querySelector('.restart-draw');
 var congrats = document.querySelector('.congrats');
 var draw = document.querySelector('.draw');
 var reset = document.getElementById('resetGame');
@@ -67,6 +68,10 @@ close.addEventListener('click', function () {
 })
 restart.addEventListener('click', function () {
   modal.classList.add('hidden');
+  startGame();
+})
+restartDraw.addEventListener('click', function () {
+  modalDraw.classList.add('hidden');
   startGame();
 })
 reset.addEventListener('click', resetGame);
@@ -158,6 +163,7 @@ function updateBoard() {
       document.getElementById('td' + row + col).innerHTML = "<span class='tdElement " + playerDisc + " player" + gameBoard[row][col] + "'> </span>";
     }
   }
+  checkDraw(counter);
 }
 
 function updateTurn() {
@@ -172,16 +178,12 @@ function updateTurn() {
 
 var counter = -1;
 function checkDraw(counter) {
-  if (counter === 42) {
-    endDraw();
+  if (counter === 42) { // change back to 42
+    gameActive = false;
+    start.removeAttribute('disabled');
+    modalDraw.classList.remove('hidden');
+    draw.textContent = "It's a draw, yo! Try again.";
   }
-}
-
-function endDraw() {
-  gameActive = false;
-  start.removeAttribute('disabled');
-  modalDraw.classList.remove('hidden');
-  draw.textContent = "It's a draw, yo! Go back to the lab and try again.";
 }
 
 function playAudio() {
@@ -190,7 +192,6 @@ function playAudio() {
 
 function checkWin() {
   // Check left to right
-  checkDraw(counter);
   for (var i = 1; i <= 2; i++) {
     for (col = 0; col <= 3; col++) {
       for (row = 0; row <= 5; row++) {
