@@ -110,9 +110,9 @@ function startGame() {
   } else {
     gameActive = true;
   }
-  for (row = 0; row <= 5; row++) {
+  for (var row = 0; row <= 5; row++) {
     gameBoard[row] = [];
-    for (col = 0; col <= 6; col++) {
+    for (var col = 0; col <= 6; col++) {
       gameBoard[row][col] = 0;
     }
   }
