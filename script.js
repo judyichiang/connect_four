@@ -26,9 +26,6 @@ var icon3 = document.querySelector('.icon-3');
 var icon4 = document.querySelector('.icon-4');
 var icon5 = document.querySelector('.icon-5');
 
-// VARIABLE DECLARATIONS
-var col, row;
-
 // VARIABLE DECLARATIONS AND INITIALIZATIONS
 var gameActive = false;
 var activePlayer = 1;
@@ -37,6 +34,7 @@ var playerColor = [];
 var p1GamesWon = 0;
 var p2GamesWon = 0;
 var playerDisc = null;
+var counter = -1;
 playerColor[1] = "green";
 playerColor[2] = "yellow";
 
@@ -99,6 +97,12 @@ mute.addEventListener('click', function () {
   }
 });
 
+// UNTIL THE START BUTTON IS PRESSED, THE DROP DISCS FUNCTIONALITY
+// SHOULD BE DISABLED TO AVOID EXCEPTION BEING THROWN
+for (var i = 0; i < 7; i++) {
+  document.querySelector('.col-' + i).classList.add('hidden');
+}
+
 // FUNCTIONS
 function startGame() {
   if (gameActive === true) {
@@ -113,9 +117,9 @@ function startGame() {
     }
   }
   gameInfo.innerHTML = '';
-  // for (var i = 0; i < 7; i++) {
-  //   document.querySelector('.col-' + i).classList.remove('hidden');
-  // }
+  for (var i = 0; i < 7; i++) {
+    document.querySelector('.col-' + i).classList.remove('hidden');
+  }
   for (row = 0; row <= 5; row++) {
     for (col = 0; col <= 6; col++) {
       var initDisc = document.getElementById('td' + row + col);
@@ -135,11 +139,14 @@ function resetGame() {
   p1Wins.textContent = "Player 1 Number of Wins: " + p1GamesWon;
   p2Wins.textContent = "Player 2 Number of Wins: " + p2GamesWon;
   gameInfo.innerHTML = '';
-  for (row = 0; row <= 5; row++) {
+  for (var row = 0; row <= 5; row++) {
     gameBoard[row] = [];
-    for (col = 0; col <= 6; col++) {
+    for (var col = 0; col <= 6; col++) {
       gameBoard[row][col] = 0;
     }
+  }
+  for (var i = 0; i < 7; i++) {
+    document.querySelector('.col-' + i).classList.remove('hidden');
   }
   for (row = 0; row <= 5; row++) {
     for (col = 0; col <= 6; col++) {
@@ -158,8 +165,8 @@ function resetGame() {
 function updateBoard() {
   checkWin();
   counter++;
-  for (col = 0; col <= 6; col++) {
-    for (row = 0; row <= 5; row++) {
+  for (var col = 0; col <= 6; col++) {
+    for (var row = 0; row <= 5; row++) {
       document.getElementById('td' + row + col).innerHTML = "<span class='tdElement " + playerDisc + " player" + gameBoard[row][col] + "'> </span>";
     }
   }
@@ -176,7 +183,6 @@ function updateTurn() {
   }
 }
 
-var counter = -1;
 function checkDraw(counter) {
   if (counter === 42) { // change back to 42
     gameActive = false;
@@ -193,8 +199,8 @@ function playAudio() {
 function checkWin() {
   // Check left to right
   for (var i = 1; i <= 2; i++) {
-    for (col = 0; col <= 3; col++) {
-      for (row = 0; row <= 5; row++) {
+    for (var col = 0; col <= 3; col++) {
+      for (var row = 0; row <= 5; row++) {
         if (gameBoard[row][col] === i) {
           if ((gameBoard[row][col + 1] === i) && (gameBoard[row][col + 2] === i) && (gameBoard[row][col + 3] === i)) {
             endGame(i);
@@ -267,6 +273,9 @@ function checkWin() {
 
 function endGame(winner) {
   gameActive = false;
+  for (var i = 0; i < 7; i++) {
+    document.querySelector('.col-' + i).classList.add('hidden');
+  }
   gameInfo.textContent = "Winner: " + winner;
   start.removeAttribute('disabled');
   modal.classList.remove('hidden');
@@ -274,20 +283,15 @@ function endGame(winner) {
 }
 
 function drop(col) {
-  for (row = 5; row >= 0; row--) {
-    try {
-      if (gameBoard[row][col] === 0) {
-        gameBoard[row][col] = activePlayer;
-        var disc = document.getElementById('td' + row + col);
-        disc.classList.add('fall-' + row);
-        updateBoard();
-        activePlayer = (activePlayer === 1) ? 2 : 1;
-        updateTurn();
-        return true;
-      }
-    }
-    catch (err) {
-      console.log(err.message);
+  for (var row = 5; row >= 0; row--) {
+    if (gameBoard[row][col] === 0) {
+      gameBoard[row][col] = activePlayer;
+      var disc = document.getElementById('td' + row + col);
+      disc.classList.add('fall-' + row);
+      updateBoard();
+      activePlayer = (activePlayer === 1) ? 2 : 1;
+      updateTurn();
+      return true;
     }
   }
 }
