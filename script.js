@@ -1,27 +1,29 @@
 // ELEMENT DEFINITIONS
-const button0 = document.querySelector('.col-0');
-const button1 = document.querySelector('.col-1');
-const button2 = document.querySelector('.col-2');
-const button3 = document.querySelector('.col-3');
-const button4 = document.querySelector('.col-4');
-const button5 = document.querySelector('.col-5');
-const button6 = document.querySelector('.col-6');
-const gameInfo = document.getElementById('gameInfo');
-const start = document.getElementById('startGame');
-const modal = document.querySelector('.modal');
-const close = document.querySelector('.close');
-const restart = document.querySelector('.restart');
-const congrats = document.querySelector('.congrats');
-const reset = document.getElementById('resetGame');
-const p1Wins = document.getElementById('p1Wins');
-const p2Wins = document.getElementById('p2Wins');
-const playTheme = document.getElementById('theme');
-const mute = document.getElementById('music');
-const icon1 = document.querySelector('.icon-1');
-const icon2 = document.querySelector('.icon-2');
-const icon3 = document.querySelector('.icon-3');
-const icon4 = document.querySelector('.icon-4');
-const icon5 = document.querySelector('.icon-5');
+var button0 = document.querySelector('.col-0');
+var button1 = document.querySelector('.col-1');
+var button2 = document.querySelector('.col-2');
+var button3 = document.querySelector('.col-3');
+var button4 = document.querySelector('.col-4');
+var button5 = document.querySelector('.col-5');
+var button6 = document.querySelector('.col-6');
+var gameInfo = document.getElementById('gameInfo');
+var start = document.getElementById('startGame');
+var modal = document.querySelector('.modal');
+var modalDraw = document.querySelector('.modal-draw');
+var close = document.querySelector('.close');
+var restart = document.querySelector('.restart');
+var congrats = document.querySelector('.congrats');
+var draw = document.querySelector('.draw');
+var reset = document.getElementById('resetGame');
+var p1Wins = document.getElementById('p1Wins');
+var p2Wins = document.getElementById('p2Wins');
+var playTheme = document.getElementById('theme');
+var mute = document.getElementById('music');
+var icon1 = document.querySelector('.icon-1');
+var icon2 = document.querySelector('.icon-2');
+var icon3 = document.querySelector('.icon-3');
+var icon4 = document.querySelector('.icon-4');
+var icon5 = document.querySelector('.icon-5');
 
 // VARIABLE DECLARATIONS
 var col, row;
@@ -117,10 +119,12 @@ function startGame() {
   }
   start.setAttribute('disabled', 'true');
   updateBoard();
+  updateTurn();
   playAudio();
 }
 
 function resetGame() {
+  counter = -1;
   p1GamesWon = 0;
   p2GamesWon = 0;
   p1Wins.textContent = "Player 1 Number of Wins: " + p1GamesWon;
@@ -148,10 +152,10 @@ function resetGame() {
 
 function updateBoard() {
   checkWin();
+  counter++;
   for (col = 0; col <= 6; col++) {
     for (row = 0; row <= 5; row++) {
       document.getElementById('td' + row + col).innerHTML = "<span class='tdElement " + playerDisc + " player" + gameBoard[row][col] + "'> </span>";
-      //+="class"
     }
   }
 }
@@ -162,8 +166,22 @@ function updateTurn() {
   p1Wins.textContent = p1WinsInfo;
   p2Wins.textContent = p2WinsInfo;
   if (gameActive) {
-    gameInfo.innerHTML = "Current Player: Player " + activePlayer + " <span class='player0" + activePlayer + "'>(" + playerColor[activePlayer] + ")</span>";
+    gameInfo.innerHTML = "Current Player: Player " + activePlayer + " <span class='player" + activePlayer + "'>(" + playerColor[activePlayer] + ")</span>";
   }
+}
+
+var counter = -1;
+function checkDraw(counter) {
+  if (counter === 42) {
+    endDraw();
+  }
+}
+
+function endDraw() {
+  gameActive = false;
+  start.removeAttribute('disabled');
+  modalDraw.classList.remove('hidden');
+  draw.textContent = "It's a draw, yo! Go back to the lab and try again.";
 }
 
 function playAudio() {
@@ -172,6 +190,7 @@ function playAudio() {
 
 function checkWin() {
   // Check left to right
+  checkDraw(counter);
   for (var i = 1; i <= 2; i++) {
     for (col = 0; col <= 3; col++) {
       for (row = 0; row <= 5; row++) {
@@ -248,9 +267,6 @@ function checkWin() {
 function endGame(winner) {
   gameActive = false;
   gameInfo.textContent = "Winner: " + winner;
-  // for (var i = 0; i < 7; i++) {
-  //   document.querySelector('.col-' + i).classList.add('hidden');
-  // }
   start.removeAttribute('disabled');
   modal.classList.remove('hidden');
   congrats.textContent = "Congratulations player " + activePlayer + ", you have won!";
