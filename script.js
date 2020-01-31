@@ -70,6 +70,7 @@ restart.addEventListener('click', function () {
 })
 restartDraw.addEventListener('click', function () {
   modalDraw.classList.add('hidden');
+  counter = -1;
   startGame();
 })
 reset.addEventListener('click', resetGame);
@@ -133,7 +134,7 @@ function startGame() {
 }
 
 function resetGame() {
-  counter = -1;
+  counter = 0;
   p1GamesWon = 0;
   p2GamesWon = 0;
   p1Wins.textContent = "Player 1 Number of Wins: " + p1GamesWon;
