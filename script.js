@@ -66,6 +66,7 @@ close.addEventListener('click', function () {
 })
 restart.addEventListener('click', function () {
   modal.classList.add('hidden');
+  counter = -1;
   startGame();
 })
 restartDraw.addEventListener('click', function () {
